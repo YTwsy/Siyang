@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="hero-art__orbit hero-art__orbit--two" />
             <div className="hero-art__glow" />
             <div className="monogram-card">
-              <span className="monogram-card__index">Siyang</span>
+              <span className="monogram-card__index">Building</span>
               <span className="monogram-card__portrait">
                 <Image src="/images/hero.jpg" alt="" fill sizes="270px" priority />
               </span>
