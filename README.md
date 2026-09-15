@@ -1,6 +1,6 @@
-# WSY · 项目与文集
+# Siyang · 项目与文集
 
-一个轻量的个人网站：首页介绍 OpenSurge for Mac、Team Cross、Pixel Proxy Gateway、SoundStage 与 CN PAC Menubar，`/writing/` 为文集保留独立页面。第一版不发布文章，也没有为了填充版面而加入占位文章。
+一个轻量的个人网站
 
 ## 技术栈
 
