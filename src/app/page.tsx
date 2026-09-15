@@ -29,7 +29,7 @@ const additionalProjects = [
     category: "Android network gateway",
     title: "Pixel Proxy Gateway",
     description:
-      "把运行 VPN 的 Android 手机变成受监控、可自恢复的局域网 HTTP / SOCKS 代理出口。应用基于随 APK 固定打包的 GOST 工作，但不实现或替代手机侧 VPN。",
+      "Google Pixel 的好搭档，把 Android 手机变成可自恢复的局域网 HTTP / SOCKS 出口，基于随 APK 固定打包的 GOST 工作。配合 OpenSurge for Mac 使用更佳。",
     tags: ["Kotlin", "Android", "GOST"],
     href: "https://github.com/YTwsy/pixel-proxy-gateway",
   },
