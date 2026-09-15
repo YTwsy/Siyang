@@ -13,6 +13,7 @@ const additionalProjects = [
   {
     index: "02",
     mark: "TC",
+    icon: "/images/team-cross-icon.png",
     tone: "team",
     category: "Coding-agent collaboration",
     title: "Team Cross",
@@ -89,8 +90,10 @@ export default function HomePage() {
             <div className="hero-art__orbit hero-art__orbit--two" />
             <div className="hero-art__glow" />
             <div className="monogram-card">
-              <span className="monogram-card__index">01</span>
-              <span className="monogram-card__letter">W</span>
+              <span className="monogram-card__index">Siyang</span>
+              <span className="monogram-card__portrait">
+                <Image src="/images/hero.jpg" alt="" fill sizes="270px" priority />
+              </span>
               <div className="monogram-card__footer">
                 <span>Make</span>
                 <span>Refine</span>
@@ -136,7 +139,6 @@ export default function HomePage() {
                 <span className="status-pill">
                   <span aria-hidden="true" /> 持续开发
                 </span>
-                <span className="project-card__year">2025 — Now</span>
               </div>
               <h3>OpenSurge for Mac</h3>
               <p>
@@ -170,8 +172,15 @@ export default function HomePage() {
                     <Arrow diagonal />
                   </span>
                 </div>
-                <div className="project-tile__mark" aria-hidden="true">
-                  {project.mark}
+                <div
+                  className={`project-tile__mark${"icon" in project ? " project-tile__mark--image" : ""}`}
+                  aria-hidden="true"
+                >
+                  {"icon" in project ? (
+                    <Image src={`${project.icon}?v=2`} alt="" width={904} height={894} />
+                  ) : (
+                    project.mark
+                  )}
                 </div>
                 <div className="project-tile__body">
                   <p className="project-tile__category">{project.category}</p>

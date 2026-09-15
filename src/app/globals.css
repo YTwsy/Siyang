@@ -161,27 +161,44 @@ a {
 
 .brand__mark,
 .footer-mark {
+  position: relative;
   width: 34px;
   height: 34px;
   display: inline-grid;
-  place-items: center;
+  overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 11px;
-  color: #174d49;
   background: linear-gradient(145deg, rgba(140, 233, 237, 0.94), rgba(178, 242, 216, 0.92));
-  font-size: 15px;
-  font-weight: 800;
   box-shadow: 0 8px 24px rgba(77, 196, 197, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.82);
-  transition:
-    color 720ms cubic-bezier(0.22, 1, 0.36, 1),
-    background 720ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: box-shadow 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand__mark {
+  border-radius: 50%;
+}
+
+.footer-mark {
+  border-radius: 11px;
+}
+
+.brand__mark img,
+.footer-mark img {
+  max-width: none;
+  object-fit: cover;
+}
+
+.brand__mark img {
+  object-position: 50% 42%;
+}
+
+.footer-mark img {
+  object-position: 48% 28%;
+  transform: scale(1.46);
 }
 
 .brand__name {
   font-size: 15px;
   font-weight: 780;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   transition: color 720ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -228,8 +245,6 @@ body:has(.writing-page) .site-header {
 
 body:has(.writing-page) .brand__mark,
 body:has(.writing-page) .footer-mark {
-  color: #673c49;
-  background: linear-gradient(145deg, rgba(250, 187, 103, 0.94), rgba(224, 137, 121, 0.88));
   box-shadow: 0 8px 24px rgba(155, 91, 92, 0.2), inset 0 1px 0 rgba(255, 250, 235, 0.75);
 }
 
@@ -502,20 +517,27 @@ a:hover .arrow--back {
   color: #4d7975;
   font-size: 12px;
   font-weight: 750;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
-.monogram-card__letter {
+.monogram-card__portrait {
   position: relative;
   z-index: 1;
   align-self: center;
-  color: rgba(23, 89, 85, 0.88);
-  font-size: clamp(8rem, 15vw, 11rem);
-  font-weight: 760;
-  letter-spacing: -0.14em;
-  line-height: 0.78;
-  text-shadow: 0 15px 28px rgba(34, 129, 123, 0.1);
-  transform: translateX(-0.06em);
+  width: min(88%, 252px);
+  aspect-ratio: 1024 / 630;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 22px;
+  background: rgba(232, 248, 246, 0.5);
+  box-shadow:
+    0 18px 36px rgba(34, 129, 123, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.monogram-card__portrait img {
+  max-width: none;
+  object-fit: cover;
 }
 
 .monogram-card__footer {
@@ -679,14 +701,6 @@ a:hover .arrow--back {
   box-shadow: 0 0 0 5px rgba(84, 203, 177, 0.13);
 }
 
-.project-card__year {
-  color: var(--ink-faint);
-  font-size: 12px;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .project-card h3 {
   margin: 0;
   font-size: clamp(2rem, 3.6vw, 3.4rem);
@@ -842,6 +856,22 @@ a:hover .arrow--back {
 
 .project-tile:hover .project-tile__mark {
   transform: rotate(-2deg) scale(1.035);
+}
+
+.project-tile__mark--image {
+  overflow: hidden;
+  border: 0;
+  border-radius: 26%;
+  background: #eef5ff;
+  box-shadow: 0 14px 28px rgba(46, 86, 176, 0.18);
+}
+
+.project-tile__mark--image img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transform: scale(1.18);
 }
 
 .project-tile__body {
@@ -1345,10 +1375,6 @@ body:has(.writing-page) .footer-meta {
 
   .monogram-card__footer {
     font-size: 8px;
-  }
-
-  .project-card__year {
-    display: none;
   }
 
   .site-footer__inner > div:first-child {
