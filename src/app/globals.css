@@ -572,9 +572,9 @@ a:hover .arrow--back {
 
 .projects__intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 440px);
-  align-items: center;
-  gap: clamp(28px, 4vw, 56px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: clamp(24px, 3vw, 48px);
   margin-bottom: 52px;
 }
 
@@ -583,10 +583,16 @@ a:hover .arrow--back {
 }
 
 .roast-badge {
+  position: relative;
+  z-index: 1;
   justify-self: end;
-  width: min(100%, 440px);
-  overflow: hidden;
-  border-radius: 22px;
+  width: 440px;
+  max-width: 100%;
+  height: 0;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: visible;
   transition: transform 220ms ease, filter 220ms ease;
 }
 
@@ -595,8 +601,11 @@ a:hover .arrow--back {
   transform: translateY(-3px);
 }
 
+.roast-badge picture,
 .roast-badge img {
-  width: 100%;
+  display: block;
+  width: 440px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -1277,14 +1286,25 @@ body:has(.writing-page) .footer-meta {
   .empty-shelf {
     width: min(100%, 620px);
   }
+}
 
+@media (max-width: 1080px) {
   .projects__intro {
     grid-template-columns: 1fr;
     justify-items: start;
   }
 
   .roast-badge {
+    height: auto;
+    min-height: 0;
+    width: min(100%, 440px);
     justify-self: start;
+  }
+
+  .roast-badge picture,
+  .roast-badge img {
+    width: 100%;
+    height: auto;
   }
 }
 
