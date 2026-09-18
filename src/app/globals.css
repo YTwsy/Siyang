@@ -901,8 +901,6 @@ a:hover .arrow--back {
 .project-tile__mark.project-tile__mark--contain,
 .project-tile--pixel .project-tile__mark--contain,
 .project-tile--pac .project-tile__mark--contain {
-  width: 104px;
-  height: 104px;
   overflow: visible;
   border: 0;
   border-radius: 0;
@@ -912,8 +910,8 @@ a:hover .arrow--back {
 
 .project-tile__mark--contain img {
   object-fit: contain;
-  transform: none;
-  filter: drop-shadow(0 10px 18px rgba(32, 64, 88, 0.16));
+  transform: scale(1.18);
+  filter: drop-shadow(0 8px 14px rgba(32, 64, 88, 0.14));
 }
 
 .project-tile__body {
@@ -1401,11 +1399,6 @@ body:has(.writing-page) .footer-meta {
     height: 76px;
     margin-top: 24px;
     border-radius: 23px;
-  }
-
-  .project-tile__mark.project-tile__mark--contain {
-    width: 92px;
-    height: 92px;
   }
 
   .project-tile__body {
