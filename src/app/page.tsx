@@ -14,6 +14,8 @@ const additionalProjects = [
     index: "02",
     mark: "TC",
     icon: "/images/team-cross-icon.png",
+    iconWidth: 904,
+    iconHeight: 894,
     tone: "team",
     category: "Coding-agent collaboration",
     title: "Team Cross",
@@ -25,6 +27,10 @@ const additionalProjects = [
   {
     index: "03",
     mark: "PG",
+    icon: "/images/pixel-proxy-gateway-icon.png",
+    iconWidth: 456,
+    iconHeight: 456,
+    iconFit: "contain",
     tone: "pixel",
     category: "Android network gateway",
     title: "Pixel Proxy Gateway",
@@ -47,6 +53,10 @@ const additionalProjects = [
   {
     index: "05",
     mark: "CP",
+    icon: "/images/cn-pac-menubar-icon.png",
+    iconWidth: 927,
+    iconHeight: 927,
+    iconFit: "contain",
     tone: "pac",
     category: "macOS proxy utility",
     title: "CN PAC Menubar",
@@ -108,12 +118,37 @@ export default function HomePage() {
 
       <section className="projects section-space" id="projects">
         <div className="page-shell">
-          <div className="section-heading">
-            <p className="eyebrow eyebrow--dark">
-              <span aria-hidden="true" /> Selected work
-            </p>
-            <h2>正在做的项目</h2>
-            <p>把想法做成可以真正运行、被使用，也经得起反复推敲的东西。</p>
+          <div className="projects__intro">
+            <div className="section-heading">
+              <p className="eyebrow eyebrow--dark">
+                <span aria-hidden="true" /> Selected work
+              </p>
+              <h2>正在做的项目</h2>
+              <p>把想法做成可以真正运行、被使用，也经得起反复推敲的东西。</p>
+            </div>
+
+            <a
+              className="roast-badge"
+              href="https://ghfind.com/u/ytwsy?ref=badge"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="访问 GitHub Roast 评分卡（在新窗口打开）"
+            >
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcSet="https://ghfind.com/api/card/mini/ytwsy?variant=radar&theme=dark&lang=zh"
+                />
+                <img
+                  src="https://ghfind.com/api/card/mini/ytwsy?variant=radar&theme=light&lang=zh"
+                  alt=""
+                  width={440}
+                  height={200}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </a>
           </div>
 
           <a
@@ -173,11 +208,18 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div
-                  className={`project-tile__mark${"icon" in project ? " project-tile__mark--image" : ""}`}
+                  className={`project-tile__mark${"icon" in project ? " project-tile__mark--image" : ""}${
+                    "iconFit" in project ? ` project-tile__mark--${project.iconFit}` : ""
+                  }`}
                   aria-hidden="true"
                 >
                   {"icon" in project ? (
-                    <Image src={`${project.icon}?v=2`} alt="" width={904} height={894} />
+                    <Image
+                      src={project.icon}
+                      alt=""
+                      width={project.iconWidth}
+                      height={project.iconHeight}
+                    />
                   ) : (
                     project.mark
                   )}
