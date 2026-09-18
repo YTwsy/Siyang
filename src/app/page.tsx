@@ -207,7 +207,7 @@ export default function HomePage() {
             <h2>文集先留一页空白。</h2>
           </div>
           <div className="writing-preview__copy">
-            <p>第一版不会发布文章。等有内容真正值得留下，再从这里开始。</p>
+            <p>等有内容真正值得留下，再从这里开始。</p>
             <Link className="button button--quiet" href="/writing/">
               看看这页 <Arrow />
             </Link>

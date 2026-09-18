@@ -4,6 +4,21 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import "./globals.css";
 
+const githubProfileUrl = "https://github.com/YTwsy";
+
+function GitHubProfileLink() {
+  return (
+    <a
+      href={githubProfileUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="访问 GitHub 主页（在新窗口打开）"
+    >
+      GitHub
+    </a>
+  );
+}
+
 export const metadata: Metadata = {
   title: {
     default: "Siyang — 项目与文集",
@@ -37,6 +52,7 @@ function SiteHeader() {
         <nav className="site-nav" aria-label="主导航">
           <Link href="/#projects">项目</Link>
           <Link href="/writing/">文集</Link>
+          <GitHubProfileLink />
         </nav>
       </div>
     </header>
@@ -54,6 +70,7 @@ function SiteFooter() {
           <p>做一些有用的东西，把过程慢慢写下来。</p>
         </div>
         <div className="footer-meta">
+          <GitHubProfileLink />
           <span>Projects &amp; notes</span>
           <span>© {new Date().getFullYear()} Siyang</span>
         </div>
